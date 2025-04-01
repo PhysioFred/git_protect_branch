@@ -1,8 +1,10 @@
-version: "3.8"
+version: "3"
 services:
   web:
-    image: nginx:latest
+    build: .
     ports:
-      - "8080:80"
+      - "3000:3000"
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html
+      - .:/app
+    environment:
+      - NODE_ENV=production
